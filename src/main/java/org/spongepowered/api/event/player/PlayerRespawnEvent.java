@@ -24,26 +24,32 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
 import org.spongepowered.api.world.Location;
 
 /**
- * Called when a {@link org.spongepowered.api.entity.player.Player} interacts with a bed.
+ * Called when a player respawns after death.
  */
-public interface PlayerBedEvent extends PlayerEvent {
+public interface PlayerRespawnEvent extends PlayerEvent {
 
     /**
-     * Gets the location of the player before entering the bed.
+     * Gets the respawn location of the player.
      *
-     * @return The location of the player
+     * @return The respawn location of the player
      */
-    Location getLocation();
+    Location getRespawnLocation();
 
     /**
-     * Gets the block of the bed being used.
+     * Gets whether the respawn location was set by a bed or not.
      *
-     * @return The block of the bed
+     * @return Whether the respawn location was set by a bed
      */
-    BlockLoc getBed();
+    boolean isBedSpawn();
+
+    /**
+     * Sets the new player respawn location permanently.
+     *
+     * @param respawnLocation The new respawn location
+     */
+    void setSpawnLocation(Location respawnLocation);
 
 }

@@ -28,6 +28,7 @@ package org.spongepowered.api.event.player;
 import org.spongepowered.api.entity.player.Player;
 import org.spongepowered.api.event.entity.EntityDeathEvent;
 import org.spongepowered.api.text.message.Message;
+import org.spongepowered.api.world.Location;
 
 /**
  * Called when a {@link Player} is killed.
@@ -47,4 +48,71 @@ public interface PlayerDeathEvent extends EntityDeathEvent, PlayerEvent {
      * @param deathMessage The new death message.
      */
     void setDeathMessage(Message deathMessage);
+
+    /**
+     * Gets the location of the player's death.
+     *
+     * @return The {@link Location} of the player's death
+     */
+    Location getLocation();
+
+    /**
+     * Gets whether the player keeps their inventory on death.
+     *
+     * @return Whether the player keeps their inventory on death
+     */
+    boolean keepsInventory();
+
+    /**
+     * Sets if the player keeps their inventory on death.
+     *
+     * @param keepInventory Whether the player should keep inventory
+     */
+    void setKeepsInventory(boolean keepInventory);
+
+    /**
+     * Gets whether the player keeps all of their EXP on death.
+     *
+     * @return Whether the player keeps all of their EXP on death
+     */
+    boolean keepsLevel();
+
+    /**
+     * Sets if the player keeps all of their EXP on death.
+     *
+     * @param keepLevel Whether the player will keep experience on death
+     */
+    void setKeepsLevel(boolean keepLevel);
+
+    /**
+     * Gets the new experience the player will have towards the next level.
+     *
+     * <p>This is not the total experience the player will have overall.</p>
+     *
+     * @return The new experience towards the next level
+     */
+    int getNewExperience();
+
+    /**
+     * Sets the new experience towards the next level after death.
+     *
+     * <p>This is not the total experience the player will have overall.</p>
+     *
+     * @param experience The new experiences towards the next level
+     */
+    void setNewExperience(int experience);
+
+    /**
+     * Gets the new level the player will have after death.
+     *
+     * @return The new level after death
+     */
+    int getNewLevel();
+
+    /**
+     * Sets the new level the player will have after death.
+     *
+     * @param level The new level after death
+     */
+    void setNewLevel(int level);
 }
