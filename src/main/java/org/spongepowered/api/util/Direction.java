@@ -109,10 +109,24 @@ public enum Direction {
         SOUTH_SOUTHWEST.opposite = NORTH_NORTHEAST;
     }
 
+    /**
+     * Gets the opposing direction of this direction.
+     *
+     * <p>Example is, Direction.WEST#getOpposite will return
+     * Direction.EAST.</p>
+     *
+     * @return The opposing direction
+     */
     public Direction getOpposite() {
         return this.opposite;
     }
 
+    /**
+     * Checks if the given direction is the opposing direction.
+     *
+     * @param d The 
+     * @return
+     */
     public boolean isOpposite(Direction d) {
         return this.opposite.equals(d);
     }
