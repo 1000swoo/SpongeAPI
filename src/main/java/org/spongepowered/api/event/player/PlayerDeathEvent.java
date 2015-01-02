@@ -50,13 +50,6 @@ public interface PlayerDeathEvent extends EntityDeathEvent, PlayerEvent {
     void setDeathMessage(Message deathMessage);
 
     /**
-     * Gets the location of the player's death.
-     *
-     * @return The {@link Location} of the player's death
-     */
-    Location getLocation();
-
-    /**
      * Gets whether the player keeps their inventory on death.
      *
      * @return Whether the player keeps their inventory on death
