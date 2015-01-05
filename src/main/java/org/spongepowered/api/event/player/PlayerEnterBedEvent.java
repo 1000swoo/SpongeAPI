@@ -27,6 +27,6 @@ package org.spongepowered.api.event.player;
 /**
  * Called when a Player enters a bed to sleep in.
  */
-public interface PlayerEnterBedEvent extends PlayerBedEvent {
+public interface PlayerEnterBedEvent extends PlayerSleepEvent {
 
 }

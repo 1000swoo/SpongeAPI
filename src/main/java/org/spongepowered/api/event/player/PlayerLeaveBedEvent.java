@@ -30,7 +30,7 @@ import org.spongepowered.api.world.Location;
 /**
  * Called when a Player leaves a bed.
  */
-public interface PlayerLeaveBedEvent extends PlayerBedEvent {
+public interface PlayerLeaveBedEvent extends PlayerSleepEvent {
 
     /**
      * Gets whether the spawn location for the player was set.
