@@ -124,8 +124,8 @@ public enum Direction {
     /**
      * Checks if the given direction is the opposing direction.
      *
-     * @param d The 
-     * @return
+     * @param d The direction to check
+     * @return True if the given direction is the opposing direction
      */
     public boolean isOpposite(Direction d) {
         return this.opposite.equals(d);
