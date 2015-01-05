@@ -24,12 +24,13 @@
  */
 package org.spongepowered.api.event.player;
 
+import org.spongepowered.api.event.ExperienceEvent;
 import org.spongepowered.api.util.event.Cancellable;
 
 /**
  * Called when a player gains or looses experience.
  */
-public interface PlayerExpChangeEvent extends PlayerEvent, Cancellable {
+public interface PlayerExpChangeEvent extends PlayerEvent, ExperienceEvent, Cancellable {
 
     /**
      * Gets the current experience.
@@ -37,19 +38,5 @@ public interface PlayerExpChangeEvent extends PlayerEvent, Cancellable {
      * @return The current experience
      */
     int getCurrent();
-
-    /**
-     * Gets the experience change to add to the current experience.
-     *
-     * @return The change in experience
-     */
-    int getChange();
-
-    /**
-     * Sets the change in experience to add to the current experience.
-     *
-     * @param expChange The change in experience
-     */
-    void setChange(int expChange);
 
 }
