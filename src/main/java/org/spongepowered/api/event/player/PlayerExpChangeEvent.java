@@ -24,26 +24,32 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.world.Location;
+import org.spongepowered.api.util.event.Cancellable;
 
 /**
- * Called when a {@link org.spongepowered.api.entity.player.Player} interacts with a bed.
+ * Called when a player gains or looses experience.
  */
-public interface PlayerBedEvent extends PlayerEvent {
+public interface PlayerExpChangeEvent extends PlayerEvent, Cancellable {
 
     /**
-     * Gets the location of the player before entering the bed.
+     * Gets the current experience.
      *
-     * @return The location of the player
+     * @return The current experience
      */
-    Location getLocation();
+    int getCurrent();
 
     /**
-     * Gets the block of the bed being used.
+     * Gets the experience change to add to the current experience.
      *
-     * @return The block of the bed
+     * @return The change in experience
      */
-    BlockLoc getBed();
+    int getChange();
+
+    /**
+     * Sets the change in experience to add to the current experience.
+     *
+     * @param expChange The change in experience
+     */
+    void setChange(int expChange);
 
 }
