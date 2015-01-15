@@ -22,15 +22,43 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity.living.human;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import com.google.common.base.Optional;
+import org.spongepowered.api.world.Location;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a Player leaves a bed.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanLeaveBedEvent extends HumanSleepEvent {
+
+    /**
+     * Gets whether the spawn location for the player was set.
+     *
+     * @return Whether the spawn location for the player was set
+     */
+    boolean wasSpawnSet();
+
+    /**
+     * Gets the spawn location of the player when leaving the bed.
+     *
+     * <p>This may have not been set by the event, so checking
+     * {@link #wasSpawnSet()} is advisable. If spawn has not been set,
+     * it will return {@link Optional#absent()}.</p>
+     *
+     * @return The players new spawn location, if available
+     */
+    Optional<Location> getSpawnLocation();
+
+    /**
+     * Sets the new spawn location of the player leaving the bed.
+     *
+     * <p>If spawn {@link #wasSpawnSet} was not infact set by this event,
+     * this does not override the return value. The given spawn should be
+     * a valid location.</p>
+     *
+     * @param location The new spawn location for the player
+     */
+    void setSpawnLocation(Location location);
 
 }

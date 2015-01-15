@@ -24,13 +24,16 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.event.entity.living.human.HumanEquipmentChangeEvent;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when an entity changes an equipped item.
+ * <p>Examples include: A zombie picking up a weapon, a Player switching
+ * their current item in hand, etc.</p>
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface PlayerEquipmentChangeEvent extends PlayerEvent, HumanEquipmentChangeEvent {
 
+    /*
+    TODO getPlayerInventory()
+     */
 }

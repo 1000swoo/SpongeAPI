@@ -26,21 +26,11 @@ package org.spongepowered.api.event.player;
 
 import org.spongepowered.api.block.BlockLoc;
 import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.EntityChangeBlockEvent;
-import org.spongepowered.api.util.Direction;
+import org.spongepowered.api.event.entity.living.human.HumanChangeBlockEvent;
 
 /**
  * Called when a {@link Player} changes a {@link BlockLoc}.
  */
-public interface PlayerChangeBlockEvent extends PlayerEvent, EntityChangeBlockEvent {
+public interface PlayerChangeBlockEvent extends HumanChangeBlockEvent, PlayerEvent {
 
-    /**
-     * Gets the direction of the block face that the player is changing.
-     *
-     * <p>Example, if a Player is breaking a block and the block is infront of
-     * the player while the player is facing EAST, the block face will be WEST.</p>
-     *
-     * @return The direction of the block face
-     */
-    Direction getBlockFaceDirection();
 }

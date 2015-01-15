@@ -24,19 +24,11 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.event.ExperienceEvent;
-import org.spongepowered.api.util.event.Cancellable;
+import org.spongepowered.api.event.entity.living.human.HumanExpChangeEvent;
 
 /**
  * Called when a player gains or looses experience.
  */
-public interface PlayerExpChangeEvent extends PlayerEvent, ExperienceEvent, Cancellable {
-
-    /**
-     * Gets the current experience.
-     *
-     * @return The current experience
-     */
-    int getCurrent();
+public interface PlayerExpChangeEvent extends HumanExpChangeEvent, PlayerEvent {
 
 }

@@ -22,15 +22,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
-
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+package org.spongepowered.api.event.entity.living.human;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a player's level is changed.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanLevelChangeEvent extends HumanEvent {
 
+    /**
+     * Gets the current level of the player.
+     *
+     * @return The current level of the player
+     */
+    int getLevel();
+
+    /**
+     * Gets the new level of the player.
+     *
+     * @return The new level of the player
+     */
+    int getNewLevel();
+
+    /**
+     * Sets the new level of the player.
+     *
+     * <p>Technically, this can be set to the same level to
+     * cancel effects of the level being changed.</p>
+     *
+     * @param newLevel The level to change to
+     */
+    void setNewLevel(int newLevel);
 }

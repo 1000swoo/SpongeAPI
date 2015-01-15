@@ -24,32 +24,11 @@
  */
 package org.spongepowered.api.event.player;
 
+import org.spongepowered.api.event.entity.living.human.HumanLevelChangeEvent;
+
 /**
  * Called when a player's level is changed.
  */
-public interface PlayerLevelChangeEvent extends PlayerEvent {
+public interface PlayerLevelChangeEvent extends HumanLevelChangeEvent, PlayerEvent {
 
-    /**
-     * Gets the current level of the player.
-     *
-     * @return The current level of the player
-     */
-    int getLevel();
-
-    /**
-     * Gets the new level of the player.
-     *
-     * @return The new level of the player
-     */
-    int getNewLevel();
-
-    /**
-     * Sets the new level of the player.
-     *
-     * <p>Technically, this can be set to the same level to
-     * cancel effects of the level being changed.</p>
-     *
-     * @param newLevel The level to change to
-     */
-    void setNewLevel(int newLevel);
 }

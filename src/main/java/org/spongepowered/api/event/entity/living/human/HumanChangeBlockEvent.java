@@ -22,15 +22,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity.living.human;
 
 import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.entity.living.Human;
+import org.spongepowered.api.event.entity.EntityChangeBlockEvent;
+import org.spongepowered.api.util.Direction;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a {@link Human} changes a {@link BlockLoc}.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanChangeBlockEvent extends HumanEvent, EntityChangeBlockEvent {
 
+    /**
+     * Gets the direction of the block face that the player is changing.
+     *
+     * <p>Example, if a Player is breaking a block and the block is infront of
+     * the player while the player is facing EAST, the block face will be WEST.</p>
+     *
+     * @return The direction of the block face
+     */
+    Direction getBlockFaceDirection();
 }

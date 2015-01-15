@@ -26,11 +26,11 @@
 package org.spongepowered.api.event.player;
 
 import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.EntityDropItemEvent;
+import org.spongepowered.api.event.entity.living.human.HumanDropItemEvent;
 
 /**
  * Called when a {@link Player} drops an item(s).
  */
-public interface PlayerDropItemEvent extends PlayerEvent, EntityDropItemEvent {
+public interface PlayerDropItemEvent extends PlayerEvent, HumanDropItemEvent {
 
 }

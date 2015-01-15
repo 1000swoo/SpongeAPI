@@ -25,8 +25,8 @@
 
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.event.entity.EntityPickUpItemEvent;
+import org.spongepowered.api.event.entity.living.human.HumanPickUpItemEvent;
 
-public interface PlayerPickUpItemEvent extends PlayerEvent, EntityPickUpItemEvent {
+public interface PlayerPickUpItemEvent extends PlayerEvent, HumanPickUpItemEvent {
 
 }

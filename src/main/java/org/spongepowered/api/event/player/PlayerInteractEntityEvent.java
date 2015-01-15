@@ -26,11 +26,11 @@ package org.spongepowered.api.event.player;
 
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.EntityInteractEntityEvent;
+import org.spongepowered.api.event.entity.living.human.HumanInteractEntityEvent;
 
 /**
  * Called when a {@link Player} interacts with an {@link Entity}.
  */
-public interface PlayerInteractEntityEvent extends PlayerInteractEvent, EntityInteractEntityEvent {
+public interface PlayerInteractEntityEvent extends PlayerInteractEvent, HumanInteractEntityEvent {
 
 }

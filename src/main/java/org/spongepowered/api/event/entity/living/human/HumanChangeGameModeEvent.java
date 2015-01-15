@@ -22,15 +22,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+package org.spongepowered.api.event.entity.living.human;
+
+import org.spongepowered.api.entity.living.Human;
+import org.spongepowered.api.entity.player.gamemode.GameMode;
+import org.spongepowered.api.util.event.Cancellable;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a {@link Human} changes {@link GameMode}.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanChangeGameModeEvent extends HumanEvent, Cancellable {
 
+    /**
+     * Gets the old {@link GameMode} of the player.
+     *
+     * @return The old {@link GameMode}.
+     */
+    GameMode getOldGameMode();
+
+    /**
+     * Gets the new {@link GameMode} of the player.
+     *
+     * @return The new {@link GameMode}.
+     */
+    GameMode getNewGameMode();
+
+    /**
+     * Sets the new {@link GameMode} of the player.
+     *
+     * @param newGameMode The new {@link GameMode} value.
+     */
+    void setNewGameMode(GameMode newGameMode);
 }

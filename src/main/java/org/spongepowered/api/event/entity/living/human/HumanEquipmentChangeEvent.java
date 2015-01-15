@@ -22,15 +22,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity.living.human;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.event.entity.EntityEquipmentChangeEvent;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when an entity changes an equipped item.
+ * <p>Examples include: A zombie picking up a weapon, a Player switching
+ * their current item in hand, etc.</p>
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanEquipmentChangeEvent extends HumanEvent, EntityEquipmentChangeEvent {
 
+    /*
+    TODO getHumanInventory()
+     */
 }

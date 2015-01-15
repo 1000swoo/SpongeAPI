@@ -22,15 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.entity.Entity;
+import org.spongepowered.api.event.cause.CauseTracked;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when an {@link Entity} is expiring from the world.
+ * <p>Examples may include when an endermite expires, or when Lightning expires.</p>
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface EntityExpireEvent extends EntityEvent, CauseTracked {
 
 }

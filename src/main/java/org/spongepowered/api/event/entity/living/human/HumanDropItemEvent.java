@@ -22,15 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
+package org.spongepowered.api.event.entity.living.human;
+
 import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.event.entity.EntityDropItemEvent;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a {@link Player} drops an item(s).
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanDropItemEvent extends HumanEvent, EntityDropItemEvent {
 
 }

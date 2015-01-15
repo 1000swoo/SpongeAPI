@@ -24,13 +24,8 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.event.entity.living.human.HumanItemConsumeEvent;
 
-/**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
- */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface PlayerItemConsumeEvent extends PlayerEvent, HumanItemConsumeEvent {
 
 }

@@ -22,15 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity.minecart;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.entity.vehicle.minecart.Minecart;
+import org.spongepowered.api.event.entity.EntityEvent;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a {@link Minecart} is affected by anything.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface MinecartEvent extends EntityEvent {
+
+    /**
+     * Gets the {@link Minecart} associated with this event.
+     *
+     * @return The minecart associated with this event
+     */
+    Minecart getMinecart();
 
 }

@@ -24,26 +24,11 @@
  */
 package org.spongepowered.api.event.player;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.world.Location;
+import org.spongepowered.api.event.entity.living.human.HumanSleepEvent;
 
 /**
  * Called when a {@link org.spongepowered.api.entity.player.Player} interacts with a bed.
  */
-public interface PlayerSleepEvent extends PlayerEvent {
-
-    /**
-     * Gets the location of the player before entering the bed.
-     *
-     * @return The location of the player
-     */
-    Location getLocation();
-
-    /**
-     * Gets the block of the bed being used.
-     *
-     * @return The block of the bed
-     */
-    BlockLoc getBed();
+public interface PlayerSleepEvent extends HumanSleepEvent, PlayerEvent {
 
 }

@@ -27,31 +27,11 @@ package org.spongepowered.api.event.player;
 
 import org.spongepowered.api.entity.player.Player;
 import org.spongepowered.api.entity.player.gamemode.GameMode;
-import org.spongepowered.api.util.event.Cancellable;
+import org.spongepowered.api.event.entity.living.human.HumanChangeGameModeEvent;
 
 /**
  * Called when a {@link Player} changes {@link GameMode}.
  */
-public interface PlayerChangeGameModeEvent extends PlayerEvent, Cancellable {
+public interface PlayerChangeGameModeEvent extends HumanChangeGameModeEvent, PlayerEvent {
 
-    /**
-     * Gets the old {@link GameMode} of the player.
-     *
-     * @return The old {@link GameMode}.
-     */
-    GameMode getOldGameMode();
-
-    /**
-     * Gets the new {@link GameMode} of the player.
-     *
-     * @return The new {@link GameMode}.
-     */
-    GameMode getNewGameMode();
-
-    /**
-     * Sets the new {@link GameMode} of the player.
-     *
-     * @param newGameMode The new {@link GameMode} value.
-     */
-    void setNewGameMode(GameMode newGameMode);
 }

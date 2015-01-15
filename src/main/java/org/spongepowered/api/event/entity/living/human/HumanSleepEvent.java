@@ -22,15 +22,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity.living.human;
 
 import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import org.spongepowered.api.world.Location;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when a {@link org.spongepowered.api.entity.living.Human} interacts with a bed.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface HumanSleepEvent extends HumanEvent {
+
+    /**
+     * Gets the location of the player before entering the bed.
+     *
+     * @return The location of the player
+     */
+    Location getLocation();
+
+    /**
+     * Gets the block of the bed being used.
+     *
+     * @return The block of the bed
+     */
+    BlockLoc getBed();
 
 }

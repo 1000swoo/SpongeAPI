@@ -26,14 +26,13 @@
 package org.spongepowered.api.event.player;
 
 import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.EntityDeathEvent;
+import org.spongepowered.api.event.entity.living.human.HumanDeathEvent;
 import org.spongepowered.api.text.message.Message;
-import org.spongepowered.api.world.Location;
 
 /**
  * Called when a {@link Player} is killed.
  */
-public interface PlayerDeathEvent extends EntityDeathEvent, PlayerEvent {
+public interface PlayerDeathEvent extends HumanDeathEvent, PlayerEvent {
 
     /**
      * Gets the death message of this {@link Player}.

@@ -22,15 +22,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.entity;
 
-import org.spongepowered.api.block.BlockLoc;
-import org.spongepowered.api.entity.player.Player;
-import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
+import com.google.common.base.Optional;
+import org.spongepowered.api.entity.Entity;
+import org.spongepowered.api.util.event.Cancellable;
 
 /**
- * Called when a {@link Player} breaks a {@link BlockLoc}.
+ * Called when an {@link Entity} targets another entity.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface EntityTargetEntityEvent extends EntityEvent, Cancellable {
+
+    /**
+     * Gets the targeted entity associated with this event.
+     *
+     * @return The targeted entity
+     */
+    Optional<Entity> getTargetedEntity();
 
 }
