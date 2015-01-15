@@ -31,6 +31,6 @@ import org.spongepowered.api.event.entity.living.human.HumanBreakBlockEvent;
 /**
  * Called when a {@link Player} breaks a {@link BlockLoc}.
  */
-public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerEvent {
+public interface PlayerBreakBlockEvent extends HumanBreakBlockEvent, PlayerChangeBlockEvent {
 
 }
