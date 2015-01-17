@@ -25,6 +25,7 @@
 
 package org.spongepowered.api.block;
 
+import com.google.common.base.Optional;
 import org.spongepowered.api.item.ItemBlock;
 import org.spongepowered.api.text.translation.Translatable;
 import org.spongepowered.api.util.DataHolder;
@@ -133,7 +134,7 @@ public interface BlockType extends Translatable {
     /**
      * Gets the equivalent {@link ItemBlock} for this BlockType.
      *
-     * @return The equivalent {@link ItemBlock}
+     * @return The equivalent {@link ItemBlock}, if available
      */
-    ItemBlock getHeldItem();
+    Optional<ItemBlock> getHeldItem();
 }
